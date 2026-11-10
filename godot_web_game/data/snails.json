@@ -1,0 +1,9 @@
+{
+	"player": {"name": "you", "body": "#9be36b", "shell": "#ff7ad9", "slime": "#7cff6b", "style": "gloss"},
+	"neighbors": [
+		{"name": "xX_sh3llb0y_Xx", "body": "#ffc87a", "shell": "#3fb8ff", "slime": "#4fd1ff", "style": "bubble", "shy": false},
+		{"name": "gastropod_grrl", "body": "#c9a6ff", "shell": "#ffe14d", "slime": "#ffd23f", "style": "glitter", "shy": true},
+		{"name": "SlimeLord2000", "body": "#8fe8d0", "shell": "#c7cede", "slime": "#c0c8d8", "style": "chrome", "shy": false},
+		{"name": "~*lil_mollusk*~", "body": "#ffb3c7", "shell": "#b388ff", "slime": "#b388ff", "style": "holo", "shy": true}
+	]
+}

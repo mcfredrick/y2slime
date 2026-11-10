@@ -1,0 +1,24 @@
+name: Update Game Registry
+
+permissions:
+  contents: write
+
+# Manual so a game can deploy to its github.io URL during development and join
+# all.crap.games only once its subdomain is live.
+on:
+  workflow_dispatch:
+
+jobs:
+  update-registry:
+    uses: mcfredrick/crap_games/.github/workflows/update-registry.yml@main
+    with:
+      game-name: "Snail Simulator 2: Y2Slime"
+      subdomain: "y2slime"
+      description: "You are a snail in a glossy turn-of-the-millennium garden. Leave shiny slime trails, boop other snails, form slime trains. There is no point."
+      category: "simulation"
+      tags: "snail, y2k, toy, relaxing, godot"
+      thumbnail-url: "https://y2slime.crap.games/index.icon.png"
+      author: "ttam"
+      repo-url: "https://github.com/mcfredrick/y2slime"
+      version: "0.1.0"
+    secrets: inherit

@@ -1,0 +1,14 @@
+{
+  "name": "Snail Simulator 2: Y2Slime",
+  "short_name": "Snail Simulator 2: Y2Slime",
+  "description": "You are a snail in a glossy turn-of-the-millennium garden. Leave shiny slime trails, boop other snails, form slime trains. There is no point.",
+  "start_url": "../",
+  "scope": "../",
+  "display": "fullscreen",
+  "background_color": "#222222",
+  "theme_color": "#222222",
+  "icons": [
+    {"src": "../index.icon.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "../index.apple-touch-icon.png", "sizes": "180x180", "type": "image/png"}
+  ]
+}

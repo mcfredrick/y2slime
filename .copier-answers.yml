@@ -1,0 +1,13 @@
+# Changes here will be overwritten by Copier
+_commit: 29e712b
+_src_path: gh:mcfredrick/crap-games-template
+author: ttam
+category: simulation
+description: You are a snail in a glossy turn-of-the-millennium garden. Leave shiny
+    slime trails, boop other snails, form slime trains. There is no point.
+game_name: 'Snail Simulator 2: Y2Slime'
+godot_version: 4.5.1
+repo_url: https://github.com/mcfredrick/y2slime
+subdomain: y2slime
+tags: snail, y2k, toy, relaxing, godot
+version: 0.1.0
