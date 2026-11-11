@@ -52,18 +52,23 @@ static func create(spec: Dictionary, painter: PaintLayer) -> Snail:
 	s.add_child(s._model)
 	s._antennae = [s._model.find_child("*antenna_l", true, false), s._model.find_child("*antenna_r", true, false)]
 	s._foot = s._model.find_child("*foot_body", true, false)
-	s._bubble = Label3D.new()
-	s._bubble.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	s._bubble = make_bubble()
 	s._bubble.position = Vector3(0, 1.25, 0)
-	s._bubble.font_size = 44
-	s._bubble.pixel_size = 0.004
-	s._bubble.outline_size = 14
-	s._bubble.modulate = Color(0.05, 0.1, 0.35)
-	s._bubble.outline_modulate = Color(0.85, 0.97, 1.0)
-	s._bubble.no_depth_test = true
 	s._bubble.visible = false
 	s.add_child(s._bubble)
 	return s
+
+
+static func make_bubble() -> Label3D:
+	var bubble := Label3D.new()
+	bubble.billboard = BaseMaterial3D.BILLBOARD_ENABLED
+	bubble.font_size = 44
+	bubble.pixel_size = 0.004
+	bubble.outline_size = 14
+	bubble.modulate = Color(0.05, 0.1, 0.35)
+	bubble.outline_modulate = Color(0.85, 0.97, 1.0)
+	bubble.no_depth_test = true
+	return bubble
 
 
 func head() -> Vector2:

@@ -22,7 +22,29 @@ func _ready() -> void:
 	hud.setup(camera, Garden.SUN, "--touch" in OS.get_cmdline_user_args())
 	hud.show_slime(garden.player.slime_color, garden.player.slime_style)
 	garden.player_slime_changed.connect(hud.show_slime)
+	_warm_up()
 	DebugArgs.apply(debug, self)
+
+
+## Browsers compile each shader the first time it draws, and Label3D rasterizes glyphs on first
+## use, which froze the game for a moment at the first boop and the first chat bubble. Draw a
+## sparkle and every chat line once under the ground, out of sight, while the garden first loads.
+func _warm_up() -> void:
+	var under := garden.player.ground + Vector2(0, -2.5)
+	# Deep enough that the stars never rise through the ground.
+	Fx.sparkle(garden, under, -3.0)
+	var bubble := Snail.make_bubble()
+	var lines: Array = []
+	for kind in GameData.load_json("chat"):
+		lines.append_array(GameData.chat(kind))
+	bubble.text = "\n".join(lines)
+	bubble.modulate.a = 0.01
+	bubble.outline_modulate.a = 0.01
+	bubble.position = Vector3(under.x, -1.0, under.y)
+	garden.add_child(bubble)
+	for i in 3:
+		await get_tree().process_frame
+	bubble.queue_free()
 
 
 func _physics_process(delta: float) -> void:
